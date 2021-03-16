@@ -1,0 +1,14 @@
+version: '3'
+services:
+  # php service
+  kasa-camera:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kasa-camera
+    restart: unless-stopped
+    ports:
+      - 43330:80
+      - 43331:1935
+    volumes:
+      - ./data:/data
